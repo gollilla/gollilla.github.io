@@ -17,8 +17,10 @@ $(document).ready(function () {
     var name = $('#name').val();
     var port = $('#port').val();
     var base = "<link rel='stylesheet' type='text/css' href='https://soradore.github.io/button.css'><a href='minecraft://?addExternalServer=" + name + "|" + ip + ":" + port + "'><div class='general-button'><div class='button-content'><span class='icon-font'>download</span><span class='button-text'>追加する</span></div></div></a>";
+    var link = "http://api.mcbe.site/go/?ip=" + ip + "&port=" + port + "&name=" + name;
     $('#result').val(base);
     $('#show').html(base);
+    $('#link').val(link);
   });
 
 })
@@ -32,8 +34,8 @@ $(document).ready(function () {
 <p><button id="submit">作成</button></p>
 <p><div id="show"></div></p>
 
-<textarea id="result" rows="20" cols="40"></textarea>
-
+<p><textarea id="result" rows="20" cols="40"></textarea></p>
+追加用リンク<textarea id="link" rows="2" cols="40"></textarea>
 </center>
 </body>
 </html>
