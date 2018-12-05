@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang='ja'>
+<head>
+ <title>Tool</title>
+ <meta charset='utf-8'>
+ <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+ <link rel='stylesheet' type='text/css' href='./button.css'>
+</head>
+<body>
+
+<script src="https://code.jquery.com/jquery-3.3.1.js"></script>
+<script>
+
+$(document).ready(function () {
+  $('#submit').click(function(e) {
+    var ip = $('#ip').val();
+    var name = $('#name').val();
+    var port = $('#port').val();
+    var base = "<link rel='stylesheet' type='text/css' href='https://soradore.github.io/button.css'><a href='minecraft://?addExternalServer=" + name + "|" + ip + ":" + port + "'><div class='general-button'><div class='button-content'><span class='icon-font'>download</span><span class='button-text'>追加する</span></div></div></a>";
+    $('#result').val(base);
+    $('#show').html(base);
+  });
+
+})
+
+
+</script>
+<center>
+<p>name:<input type="text" id="name"></p>
+<p>ip:<input type="text" id="ip"></p>
+<p>port:<input type="text" id="port" value="19132"></p>
+<p><button id="submit">作成</button></p>
+<p><div id="show"></div></p>
+
+<textarea id="result" rows="20" cols="40"></textarea>
+
+</center>
+</body>
+</html>
