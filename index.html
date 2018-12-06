@@ -25,17 +25,36 @@ $(document).ready(function () {
 
 })
 
-
 </script>
-<center>
-<p>name:<input type="text" id="name"></p>
-<p>ip:<input type="text" id="ip"></p>
-<p>port:<input type="text" id="port" value="19132"></p>
-<p><button id="submit">作成</button></p>
-<p><div id="show"></div></p>
+<style type="text/css" media="screen">
+        body {
+            background-color: skyblue;
+        }
+		#body {
+            padding: 20px; 
+	        text-align: center;
+		    font-style: oblique;
+		    margin: auto;
+		}
+		#form {
+			background-color: lightblue;
+			padding: 25px 15px 25px 25px;
+			margin: 45px 15%;
+		}
+</style>
+<div id="body">
+ <h2><font color="green">サーバ追加ボタンメーカー<font size="1px">(糞ダサネーミング)</font></font></h2>
+ <div id="form">
+  <p>name:<input type="text" id="name"></p>
+  <p style="font-size: 5px;color: red;">nameは日本語だとクラッシュする可能性があります</p>
+  <p>ip:<input type="text" id="ip"></p>
+  <p>port:<input type="text" id="port" value="19132"></p>
+  <p><button id="submit">作成</button></p>
+  <p><div id="show"></div></p>
 
-<p><textarea id="result" rows="10" cols="40"></textarea></p>
-追加用リンク<textarea id="link" rows="2" cols="40"></textarea>
-</center>
+  <p><textarea id="result" rows="10" cols="40"></textarea></p>
+  <p><textarea id="link" rows="2" cols="40"></textarea></p>
+ </div>
+</div>
 </body>
 </html>
