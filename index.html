@@ -48,11 +48,19 @@ $(document).ready(function () {
 	    color: #12213a;
 	    size: 8px;
 	}
+	
+	.pc { display: block !important; }
+        .sp { display: none !important; }
+         /* スマートフォンで見たときは"sp"のclassがついた画像が表示される */
+         @media only screen and (max-width: 750px) {
+             .pc { display: none !important; }
+             .sp { display: block !important; }
+         }
 </style>
 <div id="body">
  <h3><font color="green">サーバ追加ボタンメーカー<font size="1px">(糞ダサネーミング)</font></font></h3>
- <script src="//adm.shinobi.jp/s/e68afc4e9b357487676ab50c9d19afd6"></script>
- <script src="//adm.shinobi.jp/s/33443537955b27351c5f1f2c39de4ba0"></script>
+ <div class="sp"><script src="//adm.shinobi.jp/s/e68afc4e9b357487676ab50c9d19afd6"></script></div>
+ <div class="pc"><script src="//adm.shinobi.jp/s/33443537955b27351c5f1f2c39de4ba0"></script></div>
  <div id="form">
   <p>name:<input type="text" id="name"></p>
   <p style="font-size: 8px;color: red;">nameは§など日本語が含まれるとクラッシュする可能性があります</p>
