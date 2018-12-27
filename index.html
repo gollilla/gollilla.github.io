@@ -19,14 +19,14 @@
 <script>
 $(document).ready(function () {
   $('#submit').click(function(e) {
-    var ip = $('#ip').val();
-    var name = $('#name').val();
-    var port = $('#port').val();
+    var ip = $('#ip').val().trim();
+    var name = $('#name').val().trim();
+    var port = $('#port').val().trim();
     var base = "<link rel='stylesheet' type='text/css' href='https://soradore.github.io/button.css'><a href='minecraft://?addExternalServer=" + name + "|" + ip + ":" + port + "'><div class='general-button'><div class='button-content'><span class='icon-font'>download</span><span class='button-text'>追加する</span></div></div></a>";
     var link = "http://api.mcbe.site/go/?ip=" + ip + "&port=" + port + "&name=" + name;
     $('#result').val(base);
     $('#show').html(base);
-    $('#link').val(link);
+    $('#link').val(encodeURL(link));
   });
 })
 </script>
