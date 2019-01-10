@@ -23,7 +23,7 @@ $(document).ready(function () {
     var ip = $('#ip').val().trim();
     var name = $('#name').val().trim();
     var port = $('#port').val().trim();
-    var base = "<link rel='stylesheet' type='text/css' href='https://soradore.github.io/button.css'><a href='minecraft://?addExternalServer=" + name + "|" + ip + ":" + port + "'><div class='general-button'><div class='button-content'><span class='icon-font'>download</span><span class='button-text'>追加する</span></div></div></a>";
+    var base = "<link rel='stylesheet' type='text/css' href='https://soradore.github.io/button.css'>\n<a href='minecraft://?addExternalServer=" + name + "|" + ip + ":" + port + "'>\n<div class='general-button'>\n<div class='button-content'>\n<span class='icon-font'>download</span><span class='button-text'>追加する</span></div></div></a>";
     var link = "http://api.mcbe.site/go/?ip=" + ip + "&port=" + port + "&name=" + name;
     $('#result').val(base);
     $('#show').html(base);
