@@ -1,0 +1,233 @@
+/* /!\ You need to add vendor prefixes in order to render the CSS properly (or simply use http://leaverou.github.io/prefixfree/) /!\ */ #tridiv {
+  perspective: 800px;
+  position: absolute;
+  overflow: hidden;
+  width: 100%;
+  height: 100%;
+  background: transparent;
+  font-size: 12.5%;
+}
+.face {
+  box-shadow: inset 0 0 0 1px rgba(0, 0, 0, 0.4);
+}
+.scene, .shape, .face, .face-wrapper, .cr {
+  position: absolute;
+  transform-style: preserve-3d;
+}
+.scene {
+  width: 80em;
+  height: 80em;
+  top: 50%;
+  left: 50%;
+  margin: -40em 0 0 -40em;
+}
+.shape {
+  top: 50%;
+  left: 50%;
+  width: 0;
+  height: 0;
+  transform-origin: 50%;
+}
+.face, .face-wrapper {
+  overflow: hidden;
+  transform-origin: 0 0;
+  backface-visibility: hidden;
+  /* hidden by default, prevent blinking and other weird rendering glitchs */
+}
+.face {
+  background-size: 100% 100%!important;
+  background-position: center;
+}
+.face-wrapper .face {
+  left: 100%;
+  width: 100%;
+  height: 100%
+}
+.photon-shader {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%
+}
+.side {
+  left: 50%;
+}
+.cr, .cr .side {
+  height: 100%;
+}
+[class*="cuboid"] .ft, [class*="cuboid"] .bk {
+  width: 100%;
+  height: 100%;
+}
+[class*="cuboid"] .bk {
+  left: 100%;
+}
+[class*="cuboid"] .rt {
+  transform: rotateY(-90deg) translateX(-50%);
+}
+[class*="cuboid"] .lt {
+  transform: rotateY(90deg) translateX(-50%);
+}
+[class*="cuboid"] .tp {
+  transform: rotateX(90deg) translateY(-50%);
+}
+[class*="cuboid"] .bm {
+  transform: rotateX(-90deg) translateY(-50%);
+}
+[class*="cuboid"] .lt {
+  left: 100%;
+}
+[class*="cuboid"] .bm {
+  top: 100%;
+}
+/* .left-leg styles */
+.left-leg {
+  transform:translate3D(2.125em, 6.0625em, 2.3125em) rotateX(0deg) rotateY(0deg) rotateZ(0deg);
+  opacity:1;
+  width:4em;
+  height:12em;
+  margin:-6em 0 0 -2em;
+}
+.left-leg .ft {
+  transform:translateZ(2em);
+}
+.left-leg .bk {
+  transform:translateZ(-2em) rotateY(180deg);
+}
+.left-leg .rt, .left-leg .lt {
+  width:4em;
+  height:12em;
+}
+.left-leg .tp, .left-leg .bm {
+  width:4em;
+  height:4em;
+}
+.left-leg .face {
+  background-color:#FFFFFF;
+}
+/* .right-leg styles */
+.right-leg {
+  transform:translate3D(2.125em, 6.062500000000001em, 6.3125em) rotateX(0deg) rotateY(0deg) rotateZ(0deg);
+  opacity:1;
+  width:4em;
+  height:12em;
+  margin:-6em 0 0 -2em;
+}
+.right-leg .ft {
+  transform:translateZ(2em);
+}
+.right-leg .bk {
+  transform:translateZ(-2em) rotateY(180deg);
+}
+.right-leg .rt, .right-leg .lt {
+  width:4em;
+  height:12em;
+}
+.right-leg .tp, .right-leg .bm {
+  width:4em;
+  height:4em;
+}
+.right-leg .face {
+  background-color:#FFFFFF;
+}
+/* .left-hand styles */
+.left-hand {
+  transform:translate3D(2.1666666666666665em, -5.9999999999999964em, -1.6893939393939394em) rotateX(-5deg) rotateY(0deg) rotateZ(0deg);
+  opacity:1;
+  width:4em;
+  height:12em;
+  margin:-6em 0 0 -2em;
+}
+.left-hand .ft {
+  transform:translateZ(1.5em);
+}
+.left-hand .bk {
+  transform:translateZ(-1.5em) rotateY(180deg);
+}
+.left-hand .rt, .left-hand .lt {
+  width:3em;
+  height:12em;
+}
+.left-hand .tp, .left-hand .bm {
+  width:4em;
+  height:3em;
+}
+.left-hand .face {
+  background-color:#FFFFFF;
+}
+/* .body styles */
+.body {
+  transform:translate3D(2.166666666666667em, -5.916666666666664em, 4.250000000000001em) rotateX(0deg) rotateY(0deg) rotateZ(0deg);
+  opacity:1;
+  width:4em;
+  height:12em;
+  margin:-6em 0 0 -2em;
+}
+.body .ft {
+  transform:translateZ(4em);
+}
+.body .bk {
+  transform:translateZ(-4em) rotateY(180deg);
+}
+.body .rt, .body .lt {
+  width:8em;
+  height:12em;
+}
+.body .tp, .body .bm {
+  width:4em;
+  height:8em;
+}
+.body .face {
+  background-color:#FFFFFF;
+}
+/* .right-hand styles */
+.right-hand {
+  transform:translate3D(2.1666666666666665em, -6.0000000000000036em, 10.250000000000002em) rotateX(5deg) rotateY(0deg) rotateZ(0deg);
+  opacity:1;
+  width:4em;
+  height:12em;
+  margin:-6em 0 0 -2em;
+}
+.right-hand .ft {
+  transform:translateZ(1.5em);
+}
+.right-hand .bk {
+  transform:translateZ(-1.5em) rotateY(180deg);
+}
+.right-hand .rt, .right-hand .lt {
+  width:3em;
+  height:12em;
+}
+.right-hand .tp, .right-hand .bm {
+  width:4em;
+  height:3em;
+}
+.right-hand .face {
+  background-color:#FFFFFF;
+}
+/* .head styles */
+.head {
+  transform:translate3D(2.166666666666666em, -15.833333333333332em, 4.333333333333334em) rotateX(0deg) rotateY(0deg) rotateZ(0deg);
+  opacity:1;
+  width:8em;
+  height:8em;
+  margin:-4em 0 0 -4em;
+}
+.head .ft {
+  transform:translateZ(4em);
+}
+.head .bk {
+  transform:translateZ(-4em) rotateY(180deg);
+}
+.head .rt, .head .lt {
+  width:8em;
+  height:8em;
+}
+.head .tp, .head .bm {
+  width:8em;
+  height:8em;
+}
+.head .face {
+  background-color:#FFFFFF;
+}
