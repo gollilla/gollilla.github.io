@@ -18,8 +18,7 @@
 <body>
 <script src="https://code.jquery.com/jquery-3.3.1.js"></script>
 <script>
-$(document).ready(function () {
-  $('#submit').click(function(e) {
+$('#submit').click(function(e) {
     var ip = $('#ip').val().trim();
     var name = $('#name').val().trim();
     var port = $('#port').val().trim();
@@ -29,8 +28,7 @@ $(document).ready(function () {
     $('#result').val(base);
     $('#show').html(base);
     $('#link').val(link);
-  });
-})
+});
 </script>
 <style type="text/css" media="screen">
         body {
