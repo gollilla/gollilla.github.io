@@ -29,8 +29,8 @@
             height = document.getElementById('main_canvas').getBoundingClientRect().height;
             renderer.setPixelRatio(1);
             renderer.setSize(width, height);
-            console.log(window.devicePixelRatio);
-            console.log(width + ", " + height);
+            //console.log(window.devicePixelRatio);
+            //console.log(width + ", " + height);
 
             // シーンを作成
             const scene = new THREE.Scene();
@@ -57,11 +57,11 @@
                     scene.add(gltf.scene);
 
                     model["test"] = 100;
-                    console.log("model");
+                    //console.log("model");
                 },
                 function (error) {
-                    console.log('An error happened');
-                    console.log(error);
+                    //console.log('An error happened');
+                    //console.log(error);
                 }
             );
             renderer.gammaOutput = true;
@@ -86,7 +86,7 @@
                     }
                 });
                 if (model != null) {
-                    console.log(model);
+                    //console.log(model);
                 }
                 renderer.render(scene, camera);
                 requestAnimationFrame(tick);
@@ -109,7 +109,7 @@
                 // カメラのアスペクト比を正す
                 camera.aspect = width / height;
                 camera.updateProjectionMatrix();
-                console.log(width);
+                //console.log(width);
             }
         }
     </script>
