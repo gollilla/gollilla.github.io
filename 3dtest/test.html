@@ -61,6 +61,7 @@
                     //console.log("model");
                 },
                 function ( xhr ) {
+                    console.log(xhr);
                     console.log( ( xhr.loaded / xhr.total * 100 ) + '% loaded' );
                     var progress = document.getElementById("progress");
                     progress.textContent = ( xhr.loaded / xhr.total * 100 ) + '% loaded';
