@@ -64,7 +64,7 @@
                     //console.log(xhr);
                     //console.log( ( xhr.loaded / xhr.total * 100 ) + '% loaded' );
                     var progress = document.getElementById("progress");
-                    if(( xhr.loaded / 1147492 * 100 ) != 100)
+                    if(100 < ( xhr.loaded / 1147492 * 100 ))
                         init();
                     progress.textContent = ( xhr.loaded / 1147492 * 100 ) + '% loaded';
                 },
