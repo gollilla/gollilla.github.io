@@ -48,31 +48,33 @@
             const url = './test.glb';
 
             let model = null;
-            loader.load(
-                url,
-                function (gltf) {
-                    model = gltf.scene;
-                    model.name = "model_with_cloth";
-                    model.scale.set(400.0, 400.0, 400.0);
-                    model.position.set(0, -400, 0);
-                    scene.add(gltf.scene);
+            var Go = function(){
+                loader.load(
+                    url,
+                    function (gltf) {
+                        model = gltf.scene;
+                        model.name = "model_with_cloth";
+                        model.scale.set(400.0, 400.0, 400.0);
+                        model.position.set(0, -400, 0);
+                        scene.add(gltf.scene);
 
-                    model["test"] = 100;
-                    //console.log("model");
-                },
-                function ( xhr ) {
-                    //console.log(xhr);
-                    //console.log( ( xhr.loaded / xhr.total * 100 ) + '% loaded' );
-                    var progress = document.getElementById("progress");
-                    if(100 < ( xhr.loaded / 1147492 * 100 ))
-                        init();
-                    progress.textContent = ( xhr.loaded / 1147492 * 100 ) + '% loaded';
-                },
-                function (error) {
-                    //console.log('An error happened');
-                    //console.log(error);
-                }
-            );
+                        model["test"] = 100;
+                        //console.log("model");
+                    },
+                    function ( xhr ) {
+                        //console.log(xhr);
+                        //console.log( ( xhr.loaded / xhr.total * 100 ) + '% loaded' );
+                        var progress = document.getElementById("progress");
+                        if(100 < ( xhr.loaded / 1147492 * 100 ))
+                            Go();
+                        progress.textContent = ( xhr.loaded / 1147492 * 100 ) + '% loaded';
+                    },
+                    function (error) {
+                        //console.log('An error happened');
+                        //console.log(error);
+                    }
+                );
+            }();
             renderer.gammaOutput = true;
             renderer.gammaFactor = 2.2;
 
