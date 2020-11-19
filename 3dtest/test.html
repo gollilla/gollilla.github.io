@@ -75,6 +75,22 @@
                     }
                 );
             }();
+            
+            var Go2 = function(){
+                loader.load(
+                    './battle_ship.gltf',
+                    function (gltf) {
+                        model = gltf.scene;
+                        model.name = "model_with_cloth";
+                        model.scale.set(400.0, 400.0, 400.0);
+                        model.position.set(40, -400, 50);
+                        scene.add(gltf.scene);
+
+                        model["test"] = 100;
+                        //console.log("model");
+                    }
+               );
+            }();
             renderer.gammaOutput = true;
             renderer.gammaFactor = 2.2;
 
