@@ -41,6 +41,9 @@
             camera.position.set(0, 3000, -12000);
 
             const controls = new THREE.OrbitControls(camera, document.getElementById('main_canvas'));
+            controls.addEventListener("change", function(ev){
+                console.log(ev);
+            });
             //camera.lookAt(new THREE.Vector3(0, 400, 0));
 
             // Load GLTF or GLB
@@ -76,7 +79,7 @@
                 );
             }();
             
-            var Go2 = function(){
+            /*var Go2 = function(){
                 loader.load(
                     './battle_ship.gltf',
                     function (gltf) {
@@ -92,7 +95,7 @@
                );
             }();
             renderer.gammaOutput = true;
-            renderer.gammaFactor = 2.2;
+            renderer.gammaFactor = 2.2;*/
 
 
             // 平行光源
