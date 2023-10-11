@@ -18,13 +18,16 @@
         <canvas id="canvas" width="500px" height="800px"></canvas>
     </div>
     <div id="progress"></div>
+    <img id="preview" />
     <script>
         window.addEventListener('DOMContentLoaded', init);
         function init() {
             // レンダラーを作成
+            const canvas = document.getElementById("canvas");
             const renderer = new THREE.WebGLRenderer({
-                canvas: document.querySelector('#canvas')
+                canvas: canvas
             });
+            const canvas = document.getElementById("canvas");
             // ウィンドウサイズ設定
             width = document.getElementById('main_canvas').getBoundingClientRect().width;
             height = document.getElementById('main_canvas').getBoundingClientRect().height;
@@ -42,7 +45,7 @@
 
             const controls = new THREE.OrbitControls(camera, document.getElementById('main_canvas'));
             controls.addEventListener("change", function(ev){
-                console.log(ev);
+                document.getElementById("preview").src = canvas.toDataURL();
             });
             //camera.lookAt(new THREE.Vector3(0, 400, 0));
 
