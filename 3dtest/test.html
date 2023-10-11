@@ -25,7 +25,9 @@
             // レンダラーを作成
             const canvas = document.getElementById("canvas");
             const renderer = new THREE.WebGLRenderer({
-                canvas: canvas
+                canvas: canvas,
+                antialias: true,
+                preserveDrawingBuffer: true,
             });
             // ウィンドウサイズ設定
             width = document.getElementById('main_canvas').getBoundingClientRect().width;
