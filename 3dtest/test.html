@@ -50,7 +50,7 @@
                     const file = new File([blob], 'thumbnail.png', {type: "image/png"});
                     const dt = new DataTransfer();
                     dt.items.add(file);
-                    document.getElementsById("thumbnail").files = dt.files;
+                    document.getElementById("thumbnail").files = dt.files;
                 });
             });
             //camera.lookAt(new THREE.Vector3(0, 400, 0));
