@@ -18,7 +18,7 @@
         <canvas id="canvas" width="500px" height="800px"></canvas>
     </div>
     <div id="progress"></div>
-    <img id="preview" />
+    <input type="file" id="thumbnail" />
     <script>
         window.addEventListener('DOMContentLoaded', init);
         function init() {
@@ -46,7 +46,12 @@
 
             const controls = new THREE.OrbitControls(camera, document.getElementById('main_canvas'));
             controls.addEventListener("change", function(ev){
-                document.getElementById("preview").src = canvas.toDataURL();
+                let blob = canvas.toBlob(function(blob) {
+                    const file = new File([blob], 'thumbnail.png', {type: "image/png"});
+                    const dt = new DataTransfer();
+                    dt.items.add(file);
+                    document.getElementsByName("thumbnail")[0].files = dt.files;
+                });
             });
             //camera.lookAt(new THREE.Vector3(0, 400, 0));
 
