@@ -7,7 +7,7 @@
  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
  <meta name="twitter:card" content="summary_large_image" />
  <meta name="twitter:site" content="@soradore_" />
- <meta property="og:url" content="https://soradore.github.io" />
+ <meta property="og:url" content="https://gollilla.github.io" />
  <meta property="og:title" content="サーバー追加ボタンメーカー" />
  <meta property="og:description" content="煩わしい入力作業が省けます!!" />
  <meta property="og:image" content="https://soradore.github.io/MY_LOGO.jpg" /> 
@@ -63,7 +63,6 @@
   <p>port:<input type="text" id="port" value="19132"></p>
   <p><button id="submit">作成</button></p>
   <p><div id="show"></div></p>
-  <p><textarea id="result" rows="10" cols="30"></textarea></p>
   <p><textarea id="link" rows="2" cols="30"></textarea></p>
  </div>
    <div id="copy">&copy; 2018 <a href="https://twitter.com/soradore_">soradore</a></div>
@@ -75,12 +74,21 @@ $(document).ready(function(){
     var ip = $('#ip').val().trim();
     var name = $('#name').val().trim();
     var port = $('#port').val().trim();
-    var link = "http://api.mcbe.tokyo/go/?ip=" + ip + "&port=" + port + "&name=" + name;
-    var base = "<link rel='stylesheet' type='text/css' href='https://soradore.github.io/button.css'>\n<a href='" + link + "'>\n<div class='general-button'>\n<div class='button-content'>\n<span class='icon-font'>download</span><span class='button-text'>追加する</span></div></div></a>";
+    var link = "http://gollilla.github.io/?ip=" + ip + "&port=" + port + "&name=" + name;
+    // var base = "<link rel='stylesheet' type='text/css' href='https://soradore.github.io/button.css'>\n<a href='" + link + "'>\n<div class='general-button'>\n<div class='button-content'>\n<span class='icon-font'>download</span><span class='button-text'>追加する</span></div></div></a>";
     
     $('#result').val(base);
     $('#show').html(base);
     $('#link').val(link);
+    const params = new URL(decodeURIComponent(document.location.href)).searchParams;
+
+    const targetIp = params.get('ip');
+    const targetPort = params.get('port');
+    const targetName = params.get('name');
+
+    if (targetIp && targetPort && targetName) {
+      location.href = `minecraft://?addExternalServer=${targetName}|${targetIp}:${targetPort}`;
+    }
   });
 });
 </script>
