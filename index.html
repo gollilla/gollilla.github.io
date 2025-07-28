@@ -77,20 +77,21 @@ $(document).ready(function(){
     var link = "http://gollilla.github.io/?ip=" + ip + "&port=" + port + "&name=" + name;
     // var base = "<link rel='stylesheet' type='text/css' href='https://soradore.github.io/button.css'>\n<a href='" + link + "'>\n<div class='general-button'>\n<div class='button-content'>\n<span class='icon-font'>download</span><span class='button-text'>追加する</span></div></div></a>";
     
-    $('#result').val(base);
+    // $('#result').val(base);
     // $('#show').html(base);
 	  
     $('#link').val(link);
-    const params = new URL(decodeURIComponent(document.location.href)).searchParams;
-
-    const targetIp = params.get('ip');
-    const targetPort = params.get('port');
-    const targetName = params.get('name');
-
-    if (targetIp && targetPort && targetName) {
-      location.href = `minecraft://?addExternalServer=${targetName}|${targetIp}:${targetPort}`;
-    }
   });
+  
+  const params = new URL(decodeURIComponent(document.location.href)).searchParams;
+
+  const targetIp = params.get('ip');
+  const targetPort = params.get('port');
+  const targetName = params.get('name');
+  
+  if (targetIp && targetPort && targetName) {
+    location.href = `minecraft://?addExternalServer=${targetName}|${targetIp}:${targetPort}`;
+  }
 });
 </script>
 </body>
